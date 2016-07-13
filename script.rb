@@ -14,9 +14,7 @@ while line = gets
 	rovers.last.command_seq(line)
 end
 
-rovers.each do |rover| 
-	rover.print_pos
-end
+rovers.each(&:print_pos)
 
 
 

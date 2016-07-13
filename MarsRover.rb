@@ -6,8 +6,8 @@ GRID_MAX = []
 
 	class Rover
 
-		def initialize(x,y,dir)
-			@x,@y = x.to_i,y.to_i
+		def initialize(x, y, dir)
+			@x, @y = x.to_i , y.to_i
 			@curr_dir = DIRECTION_LITERAL.index(dir.to_s) || 0 #default direction is zero
 		end
 
@@ -42,10 +42,10 @@ GRID_MAX = []
 		private
 
 		def keep_in_bounds
-			@x = [0,@x].max
-			@y = [0,@y].max
-			@x = [GRID_MAX[0],@x].min
-			@y = [GRID_MAX[1],@y].min
+			@x = [0, @x].max
+			@y = [0, @y].max
+			@x = [GRID_MAX[0], @x].min
+			@y = [GRID_MAX[1], @y].min
 		end
 
 		def turn_left
