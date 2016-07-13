@@ -6,6 +6,8 @@ GRID_MAX = []
 
 	class Rover
 
+		attr_reader :x,:y,:curr_dir
+
 		def initialize(x, y, dir)
 			
 			@x = x.to_i rescue 0
