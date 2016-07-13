@@ -1,13 +1,16 @@
 module MarsRover
 
 DIRECTIONS = (0..3).to_a.freeze
-DIRECTION_LITERAL = "NESW"
+DIRECTION_LITERAL = 'NESW'.freeze
 GRID_MAX = []
 
 	class Rover
 
 		def initialize(x, y, dir)
-			@x, @y = x.to_i , y.to_i
+			
+			@x = x.to_i rescue 0
+			@y = y.to_i rescue 0
+
 			@curr_dir = DIRECTION_LITERAL.index(dir.to_s) || 0 #default direction is zero
 		end
 
