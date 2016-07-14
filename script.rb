@@ -1,21 +1,16 @@
-require_relative 'MarsRover.rb'
+require_relative 'mars_rover.rb'
 
-MarsRover.set_bounds(gets.chomp.split.map(&:to_i))
+MarsRover.bounds(gets.chomp.split.map(&:to_i))
 
 rovers = []
-
 while line = gets
-	next if line == "\n"
+  next if line == "\n"
 
-	line = line.chomp.split;
-	rovers << MarsRover::Rover.new(line[0],line[1],line[2])
+  line = line.chomp.split
+  rovers << MarsRover::Rover.new(line[0], line[1], line[2])
 
-	line = gets.chomp.split('')
-	rovers.last.command_seq(line)
+  line = gets.chomp.split('')
+  rovers.last.command_seq(line)
 end
 
 rovers.each(&:print_pos)
-
-
-
-
