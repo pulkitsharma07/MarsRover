@@ -1,4 +1,4 @@
-require_relative 'mars_rover.rb'
+require_relative 'lib/mars_rover.rb'
 
 MarsRover.bounds(gets.chomp.split.map(&:to_i))
 

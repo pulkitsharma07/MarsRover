@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'mars_rover.rb'
+require_relative '../lib/mars_rover.rb'
 
 DIR = 'NESW'.freeze
 
