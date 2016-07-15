@@ -1,6 +1,5 @@
 # A module to wrap all the functionality of the
 module MarsRover
-  DIRECTIONS = (0..3).to_a.freeze
   DIRECTION_LITERAL = 'NESW'.freeze
   GRID_MAX = []
 
@@ -14,6 +13,10 @@ module MarsRover
 
       # default direction is zero
       @curr_dir = DIRECTION_LITERAL.index(dir.to_s) || 0
+    end
+
+    def direction
+      DIRECTION_LITERAL[@curr_dir]
     end
 
     def print_pos

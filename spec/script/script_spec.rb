@@ -1,7 +1,4 @@
-require 'rspec'
-require_relative '../lib/mars_rover.rb'
-
-DIR = 'NESW'.freeze
+require_relative '../spec_helper.rb'
 
 describe 'Rover' do
   before do
@@ -13,42 +10,42 @@ describe 'Rover' do
       rover = MarsRover::Rover.new(0, 0, 'N')
 
       rover.command('R')
-      expect(DIR[rover.curr_dir]).to eql('E')
+      expect(rover.direction).to eql('E')
     end
 
     it 'should go from E to S on turning Right' do
       rover = MarsRover::Rover.new(0, 0, 'E')
 
       rover.command('R')
-      expect(DIR[rover.curr_dir]).to eql('S')
+      expect(rover.direction).to eql('S')
     end
 
     it 'should go from S to W on turning Right' do
       rover = MarsRover::Rover.new(0, 0, 'S')
 
       rover.command('R')
-      expect(DIR[rover.curr_dir]).to eql('W')
+      expect(rover.direction).to eql('W')
     end
 
     it 'should go from W to N on turning Right' do
       rover = MarsRover::Rover.new(0, 0, 'W')
 
       rover.command('R')
-      expect(DIR[rover.curr_dir]).to eql('N')
+      expect(rover.direction).to eql('N')
     end
 
     it 'should go from N to E on turning Right' do
       rover = MarsRover::Rover.new(0, 0, 'N')
 
       rover.command('R')
-      expect(DIR[rover.curr_dir]).to eql('E')
+      expect(rover.direction).to eql('E')
     end
 
     it 'should go from W to S on turning Left' do
       rover = MarsRover::Rover.new(0, 0, 'W')
 
       rover.command('L')
-      expect(DIR[rover.curr_dir]).to eql('S')
+      expect(rover.direction).to eql('S')
     end
   end
 
@@ -99,7 +96,7 @@ describe 'Rover' do
         rover.command('R')
         rover.command('R')
 
-        expect(DIR[rover.curr_dir]).to eql(dir)
+        expect(rover.direction).to eql(dir)
       end
     end
 
@@ -112,7 +109,7 @@ describe 'Rover' do
         rover.command('L')
         rover.command('L')
 
-        expect(DIR[rover.curr_dir]).to eql(dir)
+        expect(rover.direction).to eql(dir)
       end
     end
   end
